@@ -76,7 +76,6 @@ Nothing in this repository should be used against any system outside those cases
 | Gateway | `10.0.0.1` |
 | DNS | `8.8.8.8` |
 
-> **Note:** Kali release: `[add your version here, e.g. run: cat /etc/os-release]`
 
 ---
 
