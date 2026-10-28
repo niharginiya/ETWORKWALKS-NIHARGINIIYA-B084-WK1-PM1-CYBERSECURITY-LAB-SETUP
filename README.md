@@ -96,13 +96,13 @@ In VirtualBox: **File → Tools → Network Manager → NAT Networks → Create*
 | Enable DHCP | ✅ |
 | Enable IPv6 | ❌ |
 
-![NAT Network settings](screenshots/02-nat-network-config.png)
+![NAT Network settings](02-nat-network-config.png)
 
 ### 3️⃣ Import Kali Linux
 - Downloaded the official Kali VirtualBox image and imported it.
 - Set memory, CPUs, and attached **Adapter 1** to **NAT Network → `NatNetwork`**.
 
-![VirtualBox VM details](screenshots/01-virtualbox-vm-details.png)
+![VirtualBox VM details](01-virtualbox-vm-details.png)
 
 ### 4️⃣ Set a static IP on Kali
 Opened **Advanced Network Configuration** → edited **Wired connection 1** → **IPv4 Settings**:
@@ -115,11 +115,11 @@ Opened **Advanced Network Configuration** → edited **Wired connection 1** → 
 | Gateway | `10.0.0.1` |
 | DNS servers | `8.8.8.8` |
 
-![Static IPv4 settings in Kali](screenshots/03-kali-static-ipv4.png)
+![Static IPv4 settings in Kali](03-kali-static-ipv4.png)
 
 ### 5️⃣ Confirm Kali is up
 
-![Kali desktop running](screenshots/04-kali-desktop.png)
+![Kali desktop running](04-kali-desktop.png)
 
 ### 6️⃣ Take a clean snapshot
 After everything worked, I created a snapshot named **`Default Kali - Network Setup`** (Machine → Take Snapshot), so I can roll back after risky experiments.
