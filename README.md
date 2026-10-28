@@ -122,7 +122,7 @@ Opened **Advanced Network Configuration** → edited **Wired connection 1** → 
 ![Kali desktop running](screenshots/04-kali-desktop.png)
 
 ### 6️⃣ Take a clean snapshot
-After everything worked, I created a snapshot named **`Clean Kali - Network Setup`** (Machine → Take Snapshot), so I can roll back after risky experiments.
+After everything worked, I created a snapshot named **`Default Kali - Network Setup`** (Machine → Take Snapshot), so I can roll back after risky experiments.
 
 ---
 
@@ -139,52 +139,18 @@ Run these inside Kali and paste your real output or a screenshot under each one.
 | 5 | DNS | `nslookup networkwalks.com` | Domain resolves |
 | 6 | Nmap | `nmap --version` | Version is shown |
 
-- [ ] 1 – IP address
-- [ ] 2 – Routing
-- [ ] 3 – Gateway ping
-- [ ] 4 – Internet ping
-- [ ] 5 – DNS lookup
-- [ ] 6 – Nmap installed
-
-> A failed ping doesn't always mean there is no internet; ICMP can be blocked.
-
 ---
 
 ## 🐞 Troubleshooting
 
-> ✏️ **Edit this section to match what actually happened to you.** Delete anything you didn't face.
-
-### Problem: No internet after setting the static IP
-
-**Symptom:** After saving the manual IPv4 settings, Kali lost internet connectivity.
-
-**Fix flow I followed:**
-1. Checked that the Windows firewall / antivirus wasn't blocking anything.
-2. Confirmed the settings with `ip addr`, `ip route`, `nmcli connection show`.
-3. Tried changing the DNS to `8.8.8.8`, and then to the gateway `10.0.0.1`.
-4. Restarted Kali.
-5. Tried a different address in the same subnet (for example `10.0.0.99/24`).
-6. Applied the NetworkManager timeout fix from the project video, then restarted the VM and the host:
-
-```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-```
-
-*(Use the connection name shown by `nmcli connection show`.)*
-
-### Problem: VirtualBox shows a VT-x / virtualization error
-
-1. Restart the PC and open BIOS/UEFI.
-2. Enable Intel VT-x (Intel Virtualization Technology).
-3. Save, reboot, and start the VM again.
-
+There were no problems while setting up the lab but it's not applicable for everyone.
 ---
 
 ## 🧠 What I Learned
 
 - **NAT vs NAT Network:** plain NAT gives each VM its own outbound-only connection, while a NAT Network lets VMs on the same network reach each other *and* the internet.
 - **Static addressing** needs the IP, mask, gateway, and DNS to all match the real network, or connectivity breaks.
-- **Snapshots** give me a safe recovery point before experimenting.
+- **Snapshots** give me safe recovery point before experimenting.
 - **Documenting** the setup and the problems makes the work repeatable and helps other learners.
 
 ## 🔗 Resources
